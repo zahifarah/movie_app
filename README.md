@@ -1,2 +1,2 @@
 # Movie App 2021
-React JS Fundamentals Course by Nomad Coders.
+React JS Fundamentals course by Nomad Coders.
