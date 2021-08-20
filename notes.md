@@ -10,6 +10,12 @@ Conceptually, components are like JavaScript functions. They accept arbitrary in
    Functional components are simply javascript functions. We can create a functional component in React by writing a javascript function. These functions may or may not receive data as parameters.
 
 2. Class Components
+   Class components have STATE. State is an object, which is where you're going to pass the data -- that will change -- of your component.
+
+   - Needs to extend from React.Component.
+   - Needs to be inside a render() method to show up on screen.
+   - React automatically executes the render() method of your class component.
+
    The class components are a little more complex than the functional components. The functional components are not aware of the other components in your program whereas the class components can work with each other. We can pass data from one class component to other class components. We can use JavaScript ES6 classes to create class-based components in React.
 
 3. Rendering Components
@@ -28,3 +34,8 @@ JSX produces React “elements”.
 # PROPS
 
 Props (properties) are a way to send data from one component to another as an object.
+
+# STATE
+
+!!!!
+Every time you call setState(), React is going to call the render() function with the NEW state. !!!!
