@@ -16,7 +16,7 @@ Conceptually, components are like JavaScript functions. They accept arbitrary in
    - Needs to be inside a render() method to show up on screen.
    - React automatically executes the render() method of your class component.
 
-   The class components are a little more complex than the functional components. The functional components are not aware of the other components in your program whereas the class components can work with each other. We can pass data from one class component to other class components. We can use JavaScript ES6 classes to create class-based components in React.
+   Class components are a little more complex than functional components. Functional components are not aware of the other components in your program whereas the class components can work with each other. We can pass data from one class component to other class components. We can use JavaScript ES6 classes to create class-based components in React.
 
 3. Rendering Components
    React is also capable of rendering user-defined components. To render a component in React we can initialize an element with a user-defined component and pass this element as the first parameter to ReactDOM.render() or directly pass the component as the first argument to the ReactDOM.render() method.
@@ -38,4 +38,5 @@ Props (properties) are a way to send data from one component to another as an ob
 # STATE
 
 !!!!
-Every time you call setState(), React is going to call the render() function with the NEW state. !!!!
+Every time you call setState(), React is going to call the render() function with the NEW state.
+!!!!
