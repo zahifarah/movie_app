@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import PropTypes from "prop-types";
-import { thisStringValue } from 'es-abstract';
 
 class App extends React.Component {
     state = {
