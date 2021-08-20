@@ -1,21 +1,54 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import axios from "axios";
+import Movie from "./Movie";
 
 class App extends React.Component {
-    state = {
-        isLoading: true,
-        movies: [],
-    };
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({isLoading: false})
-        }, 3000);
-    };
-    render() {
-        const {isLoading} = this.state;
-        return <div>{ isLoading ? "Loading..." : "NOT loading" }</div>
-    };
-};
+   state = {
+      isLoading: true,
+      movies: [],
+   };
+
+   getMovies = async () => {
+      const {
+         data: {
+            data: { movies },
+         },
+      } = await axios.get(
+         "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
+      );
+      this.setState({ movies: movies, isLoading: false }); // movies (from state): movies (from axios), can be written as just "movies"
+   };
+
+   componentDidMount() {
+      this.getMovies();
+   }
+
+   render() {
+      const { isLoading, movies } = this.state;
+      return (
+         <div>
+            {isLoading
+               ? "Loading..."
+               : movies.map((movie) => {
+                    return (
+                       <Movie
+                          key={movie.id}
+                          id={movie.id}
+                          title={movie.title}
+                          year={movie.year}
+                          summary={movie.summary}
+                          poster={movie.medium_cover_image}
+                       />
+                    );
+                 })}
+         </div>
+      );
+   }
+}
 
 // export to use, default is "index.js"
 export default App;
+
+// yts: https://yts.mx/api/v2/list_movies.json
+// proxy: https://yts-proxy.nomadcoders1.now.sh/list_movies.json
+// https://yts-proxy.now.sh/list_movies.json?sort_by=rating (from https://github.com/HTlee1990/movie_app/blob/master/src/API/Api.js)
