@@ -1,5 +1,5 @@
 # Movie App 2021
 
-React JS Fundamentals course by Nomad Coders.
+Simple landing page for a movie list built using React + calling on external API.
 
 Link: https://zahifarah.github.io/movie_app/
