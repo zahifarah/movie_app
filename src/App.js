@@ -13,7 +13,7 @@ function App() {
          {/* every route on a router gets props from react-router-dom */}
          <Route path="/" exact={true} component={Home} />
          <Route path="/about" component={About} />
-         <Route path="/movie-detail" component={Detail} />
+         <Route path="/movie/:id" component={Detail} />
       </HashRouter>
    );
 }
