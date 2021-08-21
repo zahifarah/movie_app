@@ -9,8 +9,8 @@ function Movie({ year, title, summary, poster, genres }) {
          to={{
             pathname: "/movie-detail",
             state: {
-               year: year, // state: prop
-               title: title,
+               year, // state: prop
+               title,
                summary,
                poster,
                genres,
