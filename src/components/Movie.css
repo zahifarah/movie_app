@@ -6,6 +6,12 @@
    padding: 50px;
    padding-top: 70px;
    width: 80%;
+   background-color: rgb(255, 255, 255);
+}
+
+.movies a {
+   display: contents;
+   text-decoration: none;
 }
 
 .movies .movie {
