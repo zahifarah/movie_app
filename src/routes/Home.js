@@ -4,11 +4,13 @@ import Movie from "../components/Movie";
 import "./Home.css";
 
 class Home extends React.Component {
+   // initial state basically
    state = {
       isLoading: true,
       movies: [],
    };
 
+   // API call to get movies as JSON
    getMovies = async () => {
       const {
          data: {
@@ -17,7 +19,9 @@ class Home extends React.Component {
       } = await axios.get(
          "https://yts.mx/api/v2/list_movies.json?sort_by=rating"
       );
+      // change the state AFTER getMovies() finishes fetching the data
       this.setState({ movies: movies, isLoading: false }); // movies (from state): movies (from axios), can be written as just "movies"
+      // now, state contains a field called "movies" containing all the information from our API call.
    };
 
    componentDidMount() {
